@@ -1,0 +1,18 @@
+<!-- library/templates/library/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Library</title>
+</head>
+<body>
+    <h1>Books Available</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{% url 'book_detail' book.id %}">{{ book.title }}</a> - {{ book.author }} - ${{ book.price }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

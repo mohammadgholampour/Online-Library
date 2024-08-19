@@ -1,0 +1,15 @@
+<!-- library/templates/library/checkout.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <h1>Thank you for your order!</h1>
+    <p>Order ID: {{ order.id }}</p>
+    <p>Total Price: ${{ order.total_price }}</p>
+    <p>Order placed on: {{ order.created_at }}</p>
+    <p><a href="{% url 'index' %}">Back to Home</a></p>
+</body>
+</html>

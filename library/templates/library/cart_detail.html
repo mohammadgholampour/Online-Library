@@ -1,0 +1,18 @@
+<!-- library/templates/library/cart_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for item in cart_items %}
+            <li>{{ item.book.title }} - Quantity: {{ item.quantity }} - ${{ item.book.price * item.quantity }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total: ${{ cart_items|sum:'book.price' }}</p>
+    <a href="{% url 'checkout' %}">Proceed to Checkout</a>
+</body>
+</html>
